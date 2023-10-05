@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import logo from "../../assets/img/logo.svg"
+import { logo } from "../../assets/img/logo.svg"
 import SearchField from "./SearchField";
 import PrimaryButton from "../Buttons/PrimaryButton";
 
@@ -20,8 +20,8 @@ const Header = () => {
             <a href="./">
                 <WebsiteLogo src={logo} alt="Logotipo de EdmeGeek" />
             </a>
-            <SearchField inputValue="Buscar aquí" buttonValue="Buscar" />
-            <PrimaryButton url="./login" />
+            <SearchField />
+            <PrimaryButton url="./login" buttonText="Login" />
         </div>
     )
 }

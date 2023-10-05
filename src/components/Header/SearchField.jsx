@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { grey, lightGrey } from "../UI/Variables";
+import { iconSearch } from "../../assets/img/iconSearch.svg"
 
 const SearchForm = styled.form`
     width: 24.5625rem;
@@ -43,11 +44,13 @@ const SearchButton = styled.button`
     cursor: pointer;
 `;
 
-const SearchField = (inputValue, buttonValue) => {
+const SearchField = () => {
     return (
         <SearchForm>
-            <SearchInput placeholder={inputValue} />
-            <SearchButton value={buttonValue} />
+            <SearchInput placeholder="¿Qué deseas buscar?" />
+            <SearchButton>
+                <img src={iconSearch} />
+            </SearchButton>
         </SearchForm>
     )
 }
