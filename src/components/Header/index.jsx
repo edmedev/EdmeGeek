@@ -1,7 +1,31 @@
 import styled from "styled-components";
-import { logo } from "../../assets/img/logo.svg"
+import { Link } from "react-router-dom";
+import logo from "../../assets/img/logo.svg"
 import SearchField from "./SearchField";
-import PrimaryButton from "../Buttons/PrimaryButton";
+import Button from "./Button";
+import { lightBlue } from "../UI/Variables";
+
+const HeaderSection = styled.header`
+    width: 100%;
+    background: ${lightBlue};
+    padding: 2rem 4rem;
+    @media (max-width: 767px) {
+        padding: 1rem;
+    }
+    @media (max-width: 768px) and (max-width: 1023px) {
+        padding: 2rem;
+    }
+`;
+
+const HeaderContainer = styled.div`
+    max-width: 71rem;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-items: center;
+`;
 
 const WebsiteLogo = styled.img`
     display: flex;
@@ -16,14 +40,16 @@ const WebsiteLogo = styled.img`
 
 const Header = () => {
     return (
-        <div>
-            <a href="./">
-                <WebsiteLogo src={logo} alt="Logotipo de EdmeGeek" />
-            </a>
-            <SearchField />
-            <PrimaryButton url="./login" buttonText="Login" />
-        </div>
-    )
+        <HeaderSection>
+            <HeaderContainer>
+                <Link to="/">
+                    <WebsiteLogo src={logo} alt="Logotipo de EdmeGeek" />
+                </Link>
+                <SearchField />
+                <Button />
+            </HeaderContainer>
+        </HeaderSection>
+    );
 }
 
 export default Header;

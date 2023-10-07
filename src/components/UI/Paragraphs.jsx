@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import { black } from "./Variables";
+import { grey } from "./Variables";
 
 export const MainParagraph = styled.h1`
-    color: ${black};
+    color: ${grey};
+    font-family: "Raleway", sans-serif;
     font-size: 1rem;
     font-style: normal;
     font-weight: 500;
@@ -10,8 +11,8 @@ export const MainParagraph = styled.h1`
 `;
 
 export const SecondaryParagraph = styled.h1`
-    color: ${black};
-    font-size: 1rem;
+    color: ${grey};
+    font-size: 0.875rem;
     font-style: normal;
     font-weight: 500;
     line-height: normal;

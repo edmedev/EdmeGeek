@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { white } from "./Variables";
-import { black } from "./Variables";
+import { white, grey, blue } from "./Variables";
 
 export const MainTitle = styled.h1`
     color: ${white};
+    font-family: "Raleway", sans-serif;
     font-size: 3.25rem;
     font-style: normal;
     font-weight: 700;
@@ -14,7 +14,8 @@ export const MainTitle = styled.h1`
 `;
 
 export const SecondaryTitle = styled.h2`
-    color: ${black};
+    color: ${grey};
+    font-family: "Raleway", sans-serif;
     font-size: 2rem;
     font-style: normal;
     font-weight: 700;
@@ -25,7 +26,8 @@ export const SecondaryTitle = styled.h2`
 `;
 
 export const TertiaryTitle = styled.h3`
-    color: ${black};
+    color: ${grey};
+    font-family: "Raleway", sans-serif;
     font-size: 1.375rem;
     font-style: normal;
     font-weight: 700;
@@ -36,7 +38,8 @@ export const TertiaryTitle = styled.h3`
 `;
 
 export const QuartetTitle = styled.h4`
-    color: ${black};
+    color: ${grey};
+    font-family: "Raleway", sans-serif;
     font-size: 1rem;
     font-style: normal;
     font-weight: 700;
@@ -44,12 +47,12 @@ export const QuartetTitle = styled.h4`
 `;
 
 export const FifthTitle = styled.h5`
-    color: ${black};
+    color: ${blue};
+    font-family: "Raleway", sans-serif;
     font-size: 1rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    color: var(--azul-100);
     @media (max-width: 767px) {
         font-size: 0.875rem;
     }
