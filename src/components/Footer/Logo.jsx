@@ -11,10 +11,7 @@ const LogoContainer = styled.div`
     flex: 1 0 0;
     @media (max-width: 767px) {
         width: 100%;
-    }
-    @media (min-width: 767px) and (max-width: 1023px) {
-        width: 50%;
-    }
+    };
 `;
 
 const LogoImg = styled.img`

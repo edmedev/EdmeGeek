@@ -30,7 +30,8 @@ export const GroupedProducts = styled.ul`
     gap: 1rem;
     @media (max-width: 767px) {
         flex-wrap: wrap;
-    }
+        gap: 1.5rem 1rem;
+    };
 `;
 
 const Category = ({ name, id, products }) => {

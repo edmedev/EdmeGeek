@@ -12,11 +12,12 @@ export const ProductsSection = styled.section`
     padding: 4rem;
     background: ${lightGrey};
     @media (max-width: 767px) {
-        padding: 1rem;
-    }
+        gap: 2.5rem;
+        padding: 2rem 1rem;
+    };
     @media (min-width: 768px) and (max-width: 1023px) {
         padding: 2rem;
-    }
+    };
 `;
 
 const ListOfProducts = () => {
