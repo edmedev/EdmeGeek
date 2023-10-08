@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { grey, lightGrey } from "../UI/Variables";
+import { lightBlack, lightGrey } from "../UI/Variables";
 import iconSearch from "../../assets/img/iconSearch.svg"
 
 const SearchForm = styled.form`
@@ -25,7 +25,7 @@ const SearchInput = styled.input`
     flex: 1 0 0;
     background: ${lightGrey};
     border: none;
-    color: ${grey};
+    color: ${lightBlack};
     font-family: "Raleway", sans-serif;
     font-size: 0.875rem;
     font-style: normal;

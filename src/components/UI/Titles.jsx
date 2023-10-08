@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { white, grey, blue } from "./Variables";
+import { white, lightBlack, blue } from "./Variables";
 
 export const MainTitle = styled.h1`
     color: ${white};
@@ -14,7 +14,7 @@ export const MainTitle = styled.h1`
 `;
 
 export const SecondaryTitle = styled.h2`
-    color: ${grey};
+    color: ${lightBlack};
     font-family: "Raleway", sans-serif;
     font-size: 2rem;
     font-style: normal;
@@ -26,7 +26,7 @@ export const SecondaryTitle = styled.h2`
 `;
 
 export const TertiaryTitle = styled.h3`
-    color: ${grey};
+    color: ${lightBlack};
     font-family: "Raleway", sans-serif;
     font-size: 1.375rem;
     font-style: normal;
@@ -38,7 +38,7 @@ export const TertiaryTitle = styled.h3`
 `;
 
 export const QuartetTitle = styled.h4`
-    color: ${grey};
+    color: ${lightBlack};
     font-family: "Raleway", sans-serif;
     font-size: 1rem;
     font-style: normal;

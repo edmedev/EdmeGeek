@@ -5,7 +5,7 @@ import { SecondaryTitle } from "../UI/Titles";
 import { FifthTitle } from "../UI/Titles";
 import Product from "./Product";
 
-const ProductCategory = styled.div`
+export const ProductCategory = styled.div`
     width: 100%;
     max-width: 71rem;
     margin: auto;
@@ -15,14 +15,14 @@ const ProductCategory = styled.div`
     gap: 1rem;
 `;
 
-const CategoryHead = styled.div`
+export const CategoryHead = styled.div`
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
 `;
 
-const GroupedProducts = styled.ul`
+export const GroupedProducts = styled.ul`
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -43,7 +43,7 @@ const Category = ({ name, id, products }) => {
                 </Link>
             </CategoryHead>
             <GroupedProducts>
-                {products.map((product, idx) => (
+                {products && products.map((product, idx) => (
                     <Product
                         key={idx}
                         image={product.image}
