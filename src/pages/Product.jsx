@@ -1,9 +1,9 @@
 import ListOfProducts from "../components/ListOfProducts";
 
-const Products = () => {
+const Product = () => {
     return (
         <ListOfProducts />
     );
 }
 
-export default Products;
+export default Product;

@@ -1,20 +1,14 @@
 import styled from "styled-components";
 import Logo from "./Logo";
+import { FooterContainer } from "../Container";
 import LinkList from "./LinkList";
 import Copyright from "./Copyright";
 import ContactForm from "./ContactForm";
-import { lightBlue, lightBlack } from "../UI/Variables";
-
-const FooterContainer = styled.footer`
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    background: ${lightBlue};
-`;
+import { lightBlack } from "../UI/Variables";
 
 const FooterTop = styled.div`
     width: 100%;
-    max-width: 85rem;
+    max-width: 80rem;
     margin: auto;
     display: flex;
     flex-direction: row;
