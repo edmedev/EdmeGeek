@@ -1,19 +1,20 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import Page404 from './Page404';
 import Product from '../components/ListOfProducts/Product';
 import arrangement from '../components/ListOfProducts/arrangement';
 import { ProductsSection } from '../components/ListOfProducts';
-import { ProductCategory, GroupedProducts, CategoryHead } from '../components/ListOfProducts/Category';
+import { ProductCategory, GroupedProducts, CategoryHead } from '../components/Container';
 import { SecondaryTitle } from '../components/UI/Titles';
 
 const CategoryPage = () => {
-    const { id } = useParams(); // Obtén el ID de la URL
+    const { id } = useParams();
 
     const categories = arrangement;
     const category = categories.find((category) => category.id === id);
 
     if (!category) {
-        return <div>Categoría no encontrada</div>;
+        return <Page404 />;
     }
 
     return (
@@ -29,7 +30,7 @@ const CategoryPage = () => {
                             image={product.image}
                             name={product.name}
                             price={product.price}
-                            id={product.name}
+                            id={product.id}
                         />
                     ))}
                 </GroupedProducts>

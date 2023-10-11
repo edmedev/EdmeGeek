@@ -1,45 +1,16 @@
 import React from "react";
-import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { ProductCategory, CategoryHead, GroupedProducts } from "../Container";
+import Product from "./Product";
 import { SecondaryTitle } from "../UI/Titles";
 import { FifthTitle } from "../UI/Titles";
-import Product from "./Product";
-
-export const ProductCategory = styled.div`
-    width: 100%;
-    max-width: 71rem;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-`;
-
-export const CategoryHead = styled.div`
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-`;
-
-export const GroupedProducts = styled.ul`
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 1rem;
-    @media (max-width: 767px) {
-        flex-wrap: wrap;
-        gap: 1.5rem 1rem;
-    };
-`;
 
 const Category = ({ name, id, products }) => {
     return (
         <ProductCategory>
             <CategoryHead>
                 <SecondaryTitle>{name}</SecondaryTitle>
-                <Link to={`categoria/${id}`}>
+                <Link to={`/categoria/${id}`}>
                     <FifthTitle>Ver todo ➔</FifthTitle>
                 </Link>
             </CategoryHead>
@@ -50,7 +21,7 @@ const Category = ({ name, id, products }) => {
                         image={product.image}
                         name={product.name}
                         price={product.price}
-                        id={product.name}
+                        id={product.id}
                     />
                 ))}
             </GroupedProducts>
