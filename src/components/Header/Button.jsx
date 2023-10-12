@@ -41,18 +41,18 @@ const Button = () => {
     useEffect(() => {
         const currentPage = location.pathname;
 
-        if (currentPage === '/login' || currentPage === '/login.html') {
+        if (currentPage === '/' || currentPage === '/index.html') {
+            setButtonText("Login");
+            setRouteButton("/acceso");
+        } else if (currentPage === "/dashboard" || currentPage === '/dashboard.html') {
+            setButtonText("Admin");
+            setRouteButton('/menu-administrador');
+        } else if (currentPage === "/agregar-producto" || currentPage === '/agregar_producto.html') {
+            setButtonText("Admin");
+            setRouteButton('/menu-administrador');
+        } else {
             setButtonText("");
             setRouteButton("");
-        } else if (currentPage === "/dashboar" || currentPage === '/dashboar.html') {
-            setButtonText("Menú Administrador");
-            setRouteButton('/admin');
-        }else if (currentPage === "/agregar_producto" || currentPage === '/agregar_producto.html') {
-            setButtonText("Menú Administrador");
-            setRouteButton('/admin');
-        } else {
-            setButtonText("Login");
-            setRouteButton('/login');
         }
     }, [location.pathname]);
 

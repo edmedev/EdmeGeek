@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ProductCategory, CategoryHead, GroupedProducts } from "../Container";
+import { Container } from "../Container";
+import { CategoryHead, GroupedProducts } from "../Container/ProductContainers";
 import Product from "./Product";
 import { SecondaryTitle } from "../UI/Titles";
 import { FifthTitle } from "../UI/Titles";
 
 const Category = ({ name, id, products }) => {
     return (
-        <ProductCategory>
+        <Container>
             <CategoryHead>
                 <SecondaryTitle>{name}</SecondaryTitle>
                 <Link to={`/categoria/${id}`}>
@@ -25,7 +26,7 @@ const Category = ({ name, id, products }) => {
                     />
                 ))}
             </GroupedProducts>
-        </ProductCategory>
+        </Container>
     );
 }
 

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
 import Category from "./Category";
-import arrangement from './arrangement';
+import productData from '../Data/productData';
 import { lightGrey } from '../UI/Variables';
 
-export const ProductsSection = styled.section`
+const ProductsSection = styled.section`
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -21,7 +21,7 @@ export const ProductsSection = styled.section`
 `;
 
 const ListOfProducts = () => {
-    const [categories] = useState(arrangement);
+    const [categories] = useState(productData);
 
     return (
         <ProductsSection>

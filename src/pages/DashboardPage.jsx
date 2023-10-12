@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import arrangement from '../components/ListOfProducts/arrangement';
+import productData from '../components/Data/productData';
 import Dashboard from "../components/ListOfProducts/Dashboard";
-import { Section, ProductCategory, CategoryHead } from "../components/Container";
+import { Section, Container } from "../components/Container";
+import { CategoryHead } from "../components/Container/ProductContainers";
 import { SecondaryTitle } from '../components/UI/Titles';
 import { PrimaryButton } from '../components/UI/Buttons';
 
 const DashboardPage = () => {
-    const [categories] = useState(arrangement);
+    const [categories] = useState(productData);
 
     return(
         <Section>
-            <ProductCategory>
+            <Container>
                 <CategoryHead>
                     <SecondaryTitle>Todos los productos</SecondaryTitle>
                     <Link to="/agregar-producto">
@@ -24,7 +25,7 @@ const DashboardPage = () => {
                         products={category.products}
                     />
                 ))}
-            </ProductCategory>
+            </Container>
         </Section>
     );
 }

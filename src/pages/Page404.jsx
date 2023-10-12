@@ -6,7 +6,13 @@ import { blue, white } from "../components/UI/Variables";
 const PageError = styled.section`
     width: 100%;
     background: ${blue};
-    padding: 10%;
+    padding: 4rem;
+    @media (max-width: 767px) {
+        padding: 2rem 1rem;
+    };
+    @media (min-width: 768px) and (max-width: 1023px) {
+        padding: 2rem;
+    };
 `
 
 const ErrorContainer = styled.div`

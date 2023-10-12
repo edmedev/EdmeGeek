@@ -1,16 +1,6 @@
 import styled from "styled-components"
 import { gray, lightBlack, white } from "../UI/Variables"
 
-export const FormContainer = styled.div`
-    width: 100%;
-    max-width: 35rem;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-`
-
 export const Form = styled.form`
     width: 100%;
     display: flex;

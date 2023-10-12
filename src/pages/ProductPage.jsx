@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link, useParams } from 'react-router-dom';
-import arrangement from '../components/ListOfProducts/arrangement';
+import productData from '../components/Data/productData';
 import Page404 from './Page404';
-import { Section, ImgProduct } from '../components/Container';
+import { Section } from '../components/Container';
+import { ImgProduct } from '../components/Container/ProductContainers';
 import { MainParagraph } from "../components/UI/Paragraphs";
 import { SecondaryTitle, QuartetTitle } from "../components/UI/Titles";
 import { PrimaryButton } from '../components/UI/Buttons';
@@ -15,7 +16,7 @@ const ProductContainer = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 7rem;
+    gap: 5rem;
     @media (max-width: 767px) {
         flex-direction: column;
         gap: 2rem;
@@ -36,7 +37,7 @@ const ProductPage = () => {
 
     // Busca el producto específico en el arreglo arrangement
     let productDetails = null;
-    arrangement.forEach((category) => {
+    productData.forEach((category) => {
         const product = category.products.find((p) => p.id === id);
         if (product) {
         productDetails = product;
@@ -57,9 +58,12 @@ const ProductPage = () => {
                 </Item>
                 <Item>
                     <SecondaryTitle>{productDetails.name}</SecondaryTitle>
-                    <MainParagraph>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit debitis ab animi, dolores aspernatur deserunt sint quibusdam quasi, perferendis dolor expedita perspiciatis a, pariatur repudiandae consequuntur natus similique consequatur recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit debitis ab animi, dolores aspernatur deserunt sint quibusdam quasi, perferendis dolor expedita perspiciatis a, pariatur repudiandae consequuntur natus similique consequatur recusandae.</MainParagraph>
                     <QuartetTitle>{productDetails.price}</QuartetTitle>
-                    <Link to={`/comprar?id=${id}`}>
+                    <MainParagraph>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit debitis ab animi, dolores aspernatur deserunt sint quibusdam quasi, perferendis dolor expedita perspiciatis a, pariatur repudiandae consequuntur natus similique consequatur recusandae.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit debitis ab animi, dolores aspernatur deserunt sint quibusdam quasi, perferendis dolor expedita perspiciatis a, pariatur repudiandae consequuntur natus similique consequatur recusandae.
+                    </MainParagraph>
+                    <Link to={`/checkout/${id}`}>
                         <PrimaryButton>Comprar</PrimaryButton>
                     </Link>
                 </Item>

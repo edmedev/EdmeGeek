@@ -19,34 +19,34 @@ const NavigationLinks = styled.div`
 const LinkList = () => {
     return(
         <NavigationLinks>
-            <Link to="./#">
+            <Link to="/quienes-somos">
                 <MainParagraph>
                     Quienes somos
                 </MainParagraph>
             </Link>
-            <Link to="./#">
+            <Link to="/categoria/star-wars">
+                <MainParagraph>
+                    Categoría de Star Wars
+                </MainParagraph>
+            </Link>
+            <Link to="/categoria/consolas">
+                <MainParagraph>
+                    Categoría de Consolas
+                </MainParagraph>
+            </Link>
+            <Link to="/categoria/diversos">
+                <MainParagraph>
+                    Categoría de Diversos
+                </MainParagraph>
+            </Link>
+            <Link to="/politicas-privacidad">
                 <MainParagraph>
                     Política de privacidad
                 </MainParagraph>
             </Link>
-            <Link to="./#">
+            <Link to="/contactenos">
                 <MainParagraph>
-                    Programa de fidelidad
-                </MainParagraph>
-            </Link>
-            <Link to="./#">
-                <MainParagraph>
-                    Nuestras Tiendas
-                </MainParagraph>
-            </Link>
-            <Link to="./#">
-                <MainParagraph>
-                    Quiero ser franquiciado
-                </MainParagraph>
-            </Link>
-            <Link to="./#">
-                <MainParagraph>
-                    Anúncie aquí
+                    Contáctenos
                 </MainParagraph>
             </Link>
         </NavigationLinks>

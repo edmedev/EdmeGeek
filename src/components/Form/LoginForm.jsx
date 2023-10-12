@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { TertiaryContainer } from '../Container';
+import { Form, TextField, Input } from '../Container/FormContainers';
 import { SecondaryTitle } from '../UI/Titles';
-import { FormContainer, Form, TextField, Input } from './FormStyles';
 import { TertiaryButton } from '../UI/Buttons';
 
 const LoginForm = () => {
@@ -22,7 +23,7 @@ const LoginForm = () => {
     }
 
     return (
-        <FormContainer>
+        <TertiaryContainer>
             <SecondaryTitle>Iniciar Sesión</SecondaryTitle>
             <Form onSubmit={handleSubmit}>
                 <TextField>
@@ -45,7 +46,7 @@ const LoginForm = () => {
                 </TextField>
                 <TertiaryButton type="submit">Entrar</TertiaryButton>
             </Form>
-        </FormContainer>
+        </TertiaryContainer>
     );
 }
 

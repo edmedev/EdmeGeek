@@ -1,6 +1,6 @@
 // Datos del arreglo para productos de categorías
 
-const arrangement = [
+const productData = [
     {
         id: 'star-wars',
         name: 'Star Wars',
@@ -129,4 +129,4 @@ const arrangement = [
     },
 ];
 
-export default arrangement;
+export default productData;

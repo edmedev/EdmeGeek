@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Category from '../ListOfProducts/Category';
-import { FormContainer, Form, TextField, Label, Input, Select } from './FormStyles';
-import { PrimaryButton } from '../UI/Buttons';
+import { SecondaryContainer } from '../Container';
+import { Form, TextField, Label, Input, Select } from '../Container/FormContainers';
+import { TertiaryButton } from '../UI/Buttons';
 
 const AddProductForm = () => {
     const [categories, setCategories] = useState([
@@ -59,14 +58,25 @@ const AddProductForm = () => {
     };
 
     return (
-        <FormContainer>
+        <SecondaryContainer>
             <Form onSubmit={handleFormSubmit}>
+                <TextField>
+                    <Label htmlFor="imagenURL">URL de la Imagen:</Label>
+                    <Input
+                        type="url"
+                        name="image"
+                        placeholder="http://ruta/imagen.png"
+                        value={newProduct.image}
+                        onChange={handleInputChange}
+                        required
+                    />
+                </TextField>
                 <TextField>
                     <Label htmlFor="name">Nombre del Producto:</Label>
                     <Input
                         type="text"
-                        id="name"
                         name="name"
+                        placeholder="Producto XYZ"
                         value={newProduct.name}
                         onChange={handleInputChange}
                         required
@@ -76,20 +86,9 @@ const AddProductForm = () => {
                     <Label htmlFor="price">Precio:</Label>
                     <Input
                         type="text"
-                        id="price"
                         name="price"
+                        placeholder="$60,00"
                         value={newProduct.price}
-                        onChange={handleInputChange}
-                        required
-                    />
-                </TextField>
-                <TextField>
-                    <Label htmlFor="imagenURL">URL de la Imagen:</Label>
-                    <Input
-                        type="text"
-                        id="image"
-                        name="image"
-                        value={newProduct.image}
                         onChange={handleInputChange}
                         required
                     />
@@ -111,21 +110,11 @@ const AddProductForm = () => {
                         ))}
                     </Select>
                 </TextField>
-                <Link to="/no-se-pudo-agregar-el-producto">
-                    <PrimaryButton>
-                        Agregar Producto
-                    </PrimaryButton>
-                </Link>
+                <TertiaryButton type="submit">
+                    Agregar Producto
+                </TertiaryButton>
             </Form>
-
-            {categories.map((category, index) => (
-                <Category
-                    key={index}
-                    name={category.name}
-                    products={category.products}
-                />
-            ))}
-        </FormContainer>
+        </SecondaryContainer>
     );
 };
 

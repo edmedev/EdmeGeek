@@ -1,5 +1,5 @@
 import React from "react";
-import { GroupedProducts } from "../Container";
+import { GroupedProducts } from "../Container/ProductContainers";
 import Product from "./Product";
 
 const Dashboard = ({ products }) => {
@@ -11,7 +11,7 @@ const Dashboard = ({ products }) => {
                     image={product.image}
                     name={product.name}
                     price={product.price}
-                    id={product.name}
+                    id={product.id}
                 />
             ))}
         </GroupedProducts>
