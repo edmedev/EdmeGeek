@@ -59,10 +59,7 @@ const ProductPage = () => {
                 <Item>
                     <SecondaryTitle>{productDetails.name}</SecondaryTitle>
                     <QuartetTitle>{productDetails.price}</QuartetTitle>
-                    <MainParagraph>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit debitis ab animi, dolores aspernatur deserunt sint quibusdam quasi, perferendis dolor expedita perspiciatis a, pariatur repudiandae consequuntur natus similique consequatur recusandae.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit debitis ab animi, dolores aspernatur deserunt sint quibusdam quasi, perferendis dolor expedita perspiciatis a, pariatur repudiandae consequuntur natus similique consequatur recusandae.
-                    </MainParagraph>
+                    <MainParagraph>{productDetails.description}</MainParagraph>
                     <Link to={`/checkout/${id}`}>
                         <PrimaryButton>Comprar</PrimaryButton>
                     </Link>

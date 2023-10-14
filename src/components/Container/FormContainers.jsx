@@ -7,7 +7,7 @@ export const Form = styled.form`
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
-`
+`;
 
 export const TextField = styled.div`
     width: 100%;
@@ -20,7 +20,7 @@ export const TextField = styled.div`
     padding: 0.75rem;
     border-radius: 0.25rem;
     background: ${white};
-`
+`;
 
 export const Label = styled.label`
     color: ${gray};
@@ -29,7 +29,7 @@ export const Label = styled.label`
     font-style: normal;
     font-weight: 400;
     line-height: 1rem;
-`
+`;
 
 export const Input = styled.input`
     width: 100%;
@@ -40,7 +40,11 @@ export const Input = styled.input`
     font-weight: 400;
     line-height: 1.25rem;
     border: none;
-`
+    &:focus {
+        border: 2px solid #2A7AE4;
+        outline: none;
+    };
+`;
 
 export const Select = styled.select`
     width: 100%;
@@ -51,4 +55,8 @@ export const Select = styled.select`
     font-weight: 400;
     line-height: 1.25rem;
     border: none;
-`
+    &:focus {
+        border: 2px solid #2A7AE4;
+        outline: none;
+    };
+`;

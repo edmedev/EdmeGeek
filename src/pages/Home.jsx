@@ -1,8 +1,12 @@
+import CallToAction from "../components/CallToAction";
 import ListOfProducts from "../components/ListOfProducts/index";
 
 const Home = () => {
     return (
-        <ListOfProducts />
+        <main>
+            <CallToAction />
+            <ListOfProducts />
+        </main>
     );
 }
 

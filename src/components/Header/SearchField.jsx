@@ -31,6 +31,10 @@ const SearchInput = styled.input`
     font-style: normal;
     font-weight: 400;
     line-height: 1rem;
+    &:focus {
+        border: 2px solid #2A7AE4;
+        outline: none;
+    }
 `;
 
 const SearchButton = styled.button`
@@ -44,7 +48,7 @@ const SearchButton = styled.button`
 
 const SearchField = () => {
     return (
-        <SearchForm>
+        <SearchForm id="searchForm">
             <SearchInput placeholder="¿Qué deseas buscar?" />
             <SearchButton>
                 <img src={iconSearch} alt="Icono de busqueda" />

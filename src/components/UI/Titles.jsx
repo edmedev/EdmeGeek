@@ -58,3 +58,15 @@ export const FifthTitle = styled.h5`
     }
 `;
 
+export const BannerSubtitle = styled.h3`
+    color: ${white};
+    font-family: "Raleway", sans-serif;
+    font-size: 1.375rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    @media (max-width: 767px) {
+        font-size: 1rem;
+    }
+`;
+

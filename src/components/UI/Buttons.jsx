@@ -11,6 +11,7 @@ export const PrimaryButton = styled.button`
     background: ${blue};
     border: solid 2px ${blue};
     color: ${lightBlue};
+    font-family: "Raleway", sans-serif;
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;
@@ -32,6 +33,7 @@ export const SecondaryButton = styled.button`
     background: ${navyBlue};
     border: solid 2px ${navyBlue};
     color: ${lightBlue};
+    font-family: "Raleway", sans-serif;
     font-size: 1.25rem;
     font-style: normal;
     font-weight: 400;
@@ -56,6 +58,7 @@ export const TertiaryButton = styled.button`
     background: ${blue};
     border: solid 2px ${blue};
     color: ${lightBlue};
+    font-family: "Raleway", sans-serif;
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;

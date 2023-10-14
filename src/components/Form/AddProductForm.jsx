@@ -2,59 +2,56 @@ import React, { useState } from 'react';
 import { SecondaryContainer } from '../Container';
 import { Form, TextField, Label, Input, Select } from '../Container/FormContainers';
 import { TertiaryButton } from '../UI/Buttons';
+import productData from '../Data/productData';
 
 const AddProductForm = () => {
-    const [categories, setCategories] = useState([
-        "Star Wars",
-        "Consolas",
-        "Diversos"
-    ]);
-
-    const [newProduct, setNewProduct] = useState({
-        name: '',
+    const [product, setProduct] = useState({
         image: '',
+        name: '',
         price: '',
         category: '',
+        description: ''
     });
 
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-
-        if (name === 'category') {
-            // Si el campo es 'category', actualiza directamente el valor
-            setNewProduct({
-                ...newProduct,
-                category: value,
-            });
-        } else {
-            // Para otros campos, actualiza el estado como lo estabas haciendo
-            setNewProduct({
-                ...newProduct,
-                [name]: value,
-            });
-        }
-    };
+    const [nextId, setNextId] = useState(productData[0].products.length + 1);
+    const [updatedProductData, setUpdatedProductData] = useState(productData);
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        if (newProduct.name && newProduct.price && newProduct.image && newProduct.category) {
-            const newCategory = categories.find(category => category.name === newProduct.category);
 
-            if (newCategory) {
-                newCategory.products.push({
-                    name: newProduct.name,
-                    price: newProduct.price,
-                    image: newProduct.image,
-                });
-                setCategories([...categories]);
-                setNewProduct({
-                    name: '',
-                    price: '',
-                    image: '',
-                    category: '',
-                });
+        const newProduct = {
+            id: nextId.toString(),
+            image: product.image,
+            name: product.name,
+            price: product.price,
+            description: product.description
+        };
+
+        const updatedData = updatedProductData.map(category => {
+            if (category.id === product.category) {
+                return {
+                    ...category,
+                    products: [...category.products, newProduct]
+                };
             }
-        }
+            return category;
+        });
+
+        setUpdatedProductData(updatedData);
+        setNextId(nextId + 1);
+
+        setProduct({
+            image: '',
+            name: '',
+            price: '',
+            category: '',
+            description: ''
+        });
+    };
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setProduct({ ...product, [name]: value });
     };
 
     return (
@@ -66,9 +63,9 @@ const AddProductForm = () => {
                         type="url"
                         name="image"
                         placeholder="http://ruta/imagen.png"
-                        value={newProduct.image}
-                        onChange={handleInputChange}
                         required
+                        value={product.image}
+                        onChange={handleInputChange}
                     />
                 </TextField>
                 <TextField>
@@ -77,9 +74,9 @@ const AddProductForm = () => {
                         type="text"
                         name="name"
                         placeholder="Producto XYZ"
-                        value={newProduct.name}
-                        onChange={handleInputChange}
                         required
+                        value={product.name}
+                        onChange={handleInputChange}
                     />
                 </TextField>
                 <TextField>
@@ -88,27 +85,35 @@ const AddProductForm = () => {
                         type="text"
                         name="price"
                         placeholder="$60,00"
-                        value={newProduct.price}
-                        onChange={handleInputChange}
                         required
+                        value={product.price}
+                        onChange={handleInputChange}
                     />
                 </TextField>
                 <TextField>
                     <Label htmlFor="category">Categoría:</Label>
                     <Select
-                        id="category"
                         name="category"
-                        value={newProduct.category}
-                        onChange={handleInputChange}
                         required
+                        value={product.category}
+                        onChange={handleInputChange}
                     >
                         <option value="">Seleccione una categoría</option>
-                        {categories.map((category, index) => (
-                            <option key={index} value={category}>
-                                {category}
-                            </option>
-                        ))}
+                        <option value="star-wars">Star Wars</option>
+                        <option value="consolas">Consolas</option>
+                        <option value="diversos">Diversos</option>
                     </Select>
+                </TextField>
+                <TextField>
+                    <Label htmlFor="description">Descripción:</Label>
+                    <Input
+                        type="text"
+                        name="description"
+                        placeholder="Escribe la descripción del producto"
+                        required
+                        value={product.description}
+                        onChange={handleInputChange}
+                    />
                 </TextField>
                 <TertiaryButton type="submit">
                     Agregar Producto

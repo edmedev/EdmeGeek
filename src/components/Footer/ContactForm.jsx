@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import { QuartetTitle } from "../UI/Titles";
 import { white, gray, lightBlack } from "../UI/Variables";
 import { PrimaryButton } from "../UI/Buttons";
@@ -63,6 +62,10 @@ const Input = styled.input`
     font-weight: 400;
     line-height: 1.25rem;
     border: none;
+    &:focus {
+        border: 2px solid #2A7AE4;
+        outline: none;
+    };
 `;
 
 const TextArea = styled.textarea`
@@ -75,6 +78,10 @@ const TextArea = styled.textarea`
     line-height: 1.25rem;
     border: none;
     resize: none;
+    &:focus {
+        border: 2px solid #2A7AE4;
+        outline: none;
+    };
 `;
 
 const ContactForm = () => {
@@ -101,11 +108,9 @@ const ContactForm = () => {
                     </TextArea>
                 </TextField>
 
-                <Link to="#">
-                    <PrimaryButton>
-                        Enviar mensaje
-                    </PrimaryButton>
-                </Link>
+                <PrimaryButton>
+                    Enviar mensaje
+                </PrimaryButton>
             </Form>
         </FormContainer>
     );
